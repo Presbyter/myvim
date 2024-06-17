@@ -614,6 +614,8 @@ require('lazy').setup({
       },
     },
     opts = {
+      -- The default edition of Rust to use when no Cargo.toml file is found
+      default_edition = '2021',
       notify_on_error = false,
       format_on_save = function(bufnr)
         -- Disable "format_on_save lsp_fallback" for languages that don't
@@ -633,6 +635,7 @@ require('lazy').setup({
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
         -- javascript = { { "prettierd", "prettier" } },
+        rust = { 'rustfmt' },
       },
     },
   },
