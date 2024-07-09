@@ -4,6 +4,8 @@ return {
     version = '*',
     dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
+      require('nvim-web-devicons').set_default_icon('', '#6d8086', 65)
+
       require('nvim-tree').setup {
         sort = {
           sorter = 'case_sensitive',
