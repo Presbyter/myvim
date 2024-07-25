@@ -643,6 +643,7 @@ require('lazy').setup({
         -- javascript = { { "prettierd", "prettier" } },
         rust = { 'rustfmt' },
         go = { 'goimports', 'gofmt' },
+        proto = { 'buf' },
       },
     },
   },
