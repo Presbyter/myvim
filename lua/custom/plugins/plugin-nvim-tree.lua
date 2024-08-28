@@ -3,6 +3,9 @@ return {
     'nvim-tree/nvim-tree.lua',
     version = '*',
     dependencies = 'nvim-tree/nvim-web-devicons',
+    keys = {
+      { '<leader>t', '<cmd>NvimTreeToggle<CR>', desc = 'Toggle nvim-tree' },
+    },
     config = function()
       require('nvim-web-devicons').set_default_icon('', '#6d8086', 65)
 
