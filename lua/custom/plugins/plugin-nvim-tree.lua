@@ -1,13 +1,32 @@
+-- return {
+--   'nvim-tree/nvim-tree.lua',
+--   version = '*',
+--   lazy = false,
+--   dependencies = {
+--     'nvim-tree/nvim-web-devicons',
+--   },
+--   keys = {
+--     { '<leader>tt', '<cmd>NvimTreeToggle<CR>', desc = 'Toggle nvim-tree' },
+--   },
+--   config = function()
+--     require('nvim-tree').setup {}
+--   end,
+-- }
 return {
   {
     'nvim-tree/nvim-tree.lua',
     version = '*',
     dependencies = 'nvim-tree/nvim-web-devicons',
     keys = {
-      { '<leader>t', '<cmd>NvimTreeToggle<CR>', desc = 'Toggle nvim-tree' },
+      { '<leader>tt', '<cmd>NvimTreeToggle<CR>', desc = 'Toggle nvim-tree' },
     },
     config = function()
-      require('nvim-web-devicons').set_default_icon('', '#6d8086', 65)
+      -- disable netrw at the very start of your init.lua
+      vim.g.loaded_netrw = 1
+      vim.g.loaded_netrwPlugin = 1
+
+      -- optionally enable 24-bit colour
+      vim.opt.termguicolors = true
 
       require('nvim-tree').setup {
         sort = {
